@@ -85,20 +85,16 @@ let quote = [
 /* 
     make a random background color generator
 */
-function backGroundColors(){
+function backgroundColors(){
   const color ='0123456789ABCDEF';
   let pound = '#'
-  for (let i =0; i<color.length; i++){
+  for (let i =0; i<6; i++){
     pound+= color[Math.floor(Math.random() * 16)];
   }
-
+  
   var bodOfDisplay = document.querySelector('body');
   bodOfDisplay.style.backgroundColor = pound;
-}
-
-
-
-
+};
 /***
  * `getRandomQuote` function
 ***/
@@ -107,6 +103,15 @@ function backGroundColors(){
   var randomNumber = Math.floor(Math.random() * quote.length);
   return quote[randomNumber];
  };
+
+/*
+    time interval
+*/
+var wait;
+function changeQuote(){
+  wait = setInterval(printQuote, 20000);
+}
+
 
 /***
  * `printQuote` function
@@ -120,23 +125,26 @@ function printQuote(){
 
   var HTMLString = `<p class="quote"> ${getQuoteObject.quote} </p>
                    <p class="source"> ${getQuoteObject.source}`;
-
+  
+  //check if there is a citation to be added to the quote
   if (getQuoteObject.citation) {
-    HTMLString+= `<span = "citation"> ${getQuoteObject.citation}</span>`;
+    HTMLString+= `<span class= "citation"> ${getQuoteObject.citation}</span>`;
   }
 
+  //Check if there is a year in the quote citation
   if (getQuoteObject.year){
     HTMLString+= `<span class="year">${getQuoteObject.year} </span>`;
   }
 
   HTMLString += '</p>';
 
+  //display the qupte as required
   displayRanQoute.innerHTML = HTMLString;
 
-  backGroundColors();
-
-  //return HTMLString.citation + HTMLString.year
+  backgroundColors();
+  changeQuote();
 };
+
 
 /***
  * click event listener for the print quote button
