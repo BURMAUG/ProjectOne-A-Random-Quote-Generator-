@@ -11,7 +11,7 @@ project 1 - A Random Quote Generator
  * `quotes` array 
 ***/
 
-let quote = [
+let quotes = [
   {quote:`Two things are infinite: the universe and human stupidity; and I'm not 
           sure about the universe.`,
   source: 'Albert Einsten'},
@@ -87,11 +87,11 @@ let quote = [
 */
 function backgroundColors(){
   const color ='0123456789ABCDEF';
-  let pound = '#'
+  let pound = '#';
+  //looping though the color string to make a unique color on random
   for (let i =0; i<6; i++){
     pound+= color[Math.floor(Math.random() * 16)];
   }
-  
   var bodOfDisplay = document.querySelector('body');
   bodOfDisplay.style.backgroundColor = pound;
 };
@@ -100,8 +100,8 @@ function backgroundColors(){
 ***/
 
  function getRandomQuote(){
-  var randomNumber = Math.floor(Math.random() * quote.length);
-  return quote[randomNumber];
+  var randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
  };
 
 /*
