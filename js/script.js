@@ -34,7 +34,9 @@ let quotes = [
 
   {quote:`Have the courage to follow your heart and intuition. They somehow already know what
           you truly want to become. Everything else is secondary.`,
-  source: 'Steve Jobs'},
+  source: 'Steve Jobs',
+  category: `Commencement speech`
+  },
   {
     quote: `There are only two ways to live your life. One is as though nothing is 
              a miracle. The other is as though everything is a miracle.`,
@@ -62,7 +64,7 @@ let quotes = [
             it wears off, but you know it. It reinforced my sense of what was important—creating 
             great things instead of making money, putting things back into the stream of history
              and of human consciousness as much as I could.`,
-    source:'Steve Jobs',
+    source:'Steve Jobs'
 
   },
   {
@@ -78,6 +80,13 @@ let quotes = [
     source: 'Steve Jobs',
     year: 2011,
     citation: `Steve Jobs by Walter Issaacson`
+  },
+  {
+    quote: `I am not bound to win, but I am bound to be true. I am not bound to succeed, but I am
+            bound to live by the light that I have. I must stand with anybody that stands right, 
+            and stand with him while he is right, and part with him when he goes wrong.`,
+    source: `Abraham Lincoln`,
+    category: `politics`
   }
             ];
 

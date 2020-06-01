@@ -9,8 +9,7 @@ function backgroundColors() {
     for (let i = 0; i < 6; i++) {
         pound += color[Math.floor(Math.random() * 16)];
     }
-    var bodOfDisplay = document.querySelector('body');
-    bodOfDisplay.style.backgroundColor = pound;
+    document.querySelector('body').style.backgroundColor = pound;
 };
 /***
  * `getRandomQuote` function
@@ -26,7 +25,7 @@ function getRandomQuote() {
 */
 var wait;
 function changeQuote() {
-    wait = setInterval(printQuote, 20000);
+    wait = setInterval(printQuote, 18000);
 }
 
 
@@ -53,14 +52,20 @@ function printQuote() {
         HTMLString += `<span class="year">${getQuoteObject.year} </span>`;
     }
 
+    //Check if there is a category and print that
+    if(getQuoteObject.category){
+        HTMLString += `<span class="category"> ${getQuoteObject.category} </span>`;
+    }
+
     HTMLString += '</p>';
 
     //display the qupte as required
     displayRanQoute.innerHTML = HTMLString;
 
     backgroundColors();
-    changeQuote();
 };
+changeQuote();
+
 
 
 /***

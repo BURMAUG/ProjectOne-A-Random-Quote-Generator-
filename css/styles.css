@@ -109,6 +109,11 @@ h1 {
   content: ", ";
   font-style: normal;
 }
+/* /* category */
+.category:before{
+  content: ", ";
+  font-style: normal;
+} */
 
 .year:before {
   content: ", ";
