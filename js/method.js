@@ -20,13 +20,8 @@ function getRandomQuote() {
     return quotes[randomNumber];
 };
 
-/*
-    time interval
-*/
-var wait;
-function changeQuote() {
-    wait = setInterval(printQuote, 18000);
-}
+
+
 
 
 /***
@@ -64,7 +59,7 @@ function printQuote() {
 
     backgroundColors();
 };
-changeQuote();
+setInterval(printQuote, 18000);
 
 
 
